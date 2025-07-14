@@ -1,0 +1,64 @@
+Substring
+	String a = string-name.substring(starting-index,ending-index);
+
+To print with precision
+	System.out.printf("%.2f",variable-name);
+	return Math.round(variable-name*10.0)/10.0; -> multiply how many decimal place req
+
+Matches
+	s.matches("shiva\\d{2}");
+
+StringBuilder or StringBuffer?
+	StringBuilder a = new StringBuilder(String-name);
+	String b = a.reverse().toString();
+
+Type Conversion
+	Integer.parseInt()
+	Double.parseDouble()
+
+Arrays and Streams
+import java.util.stream.*;
+	.split();   
+	Arrays.stream(array).collect(Collectors.toList());
+	Arrays.stream(array).sorted().boxed().collect(Collectors.toList());
+	Arrays.stream(array).boxed().sorted(Comparator.reverseOrder()).collect(Collectors.toList()); -> reverse works with Integers only
+	.toArray();
+	.forEach(System.out::println); -> keep as stream to work
+	.toList();
+	.filter(student->student.getPercentageScore()>score)
+	.sorted(Compartor.comaparingInt(Student::getPercentageScore).reversed())
+	.toList();
+	stream.mapToInt(antha-class-name::get-antha-method-name).sum();
+	.distinct();
+
+HashMap
+	for(Map.Entry<String,String> i:map-name.entrySet()){
+		println(i.getKey(),i.getValue());
+	}
+	.keySet(); .get(); .containsKey();
+
+JDBC
+	Connection c = DB.getConnection();
+	String sql = "INSERT INTO Customer values (?,?,?,?)";
+	PrepareStatement ps = c.prepareStatement(sql);
+	ps.setString(1,);
+	ps.setInt(2,);
+	ps.setDouble(3,);
+	ResultSet rs = ps.executeQuery(); || int ans = ps.executeUpdate();
+	String name = rs.getString("employeeName");
+
+Exceptions
+Map to Int
+
+Date and Time
+import java.time.*;
+import java.format.*;
+	DateTimeFormatter format1 = DateTimeFormatter("yyyy/MM/dd HH:mm");
+	LocalDateTime ans = LocalDateTime.parse(string-name,format1);
+	ans = ans.plusHours();
+	DateTimeFormatter format2 = DateTimeFormatter("yyyy-MM-dd hh:mm a");
+	String ans = ans.format(format2); 
+
+SimpleDateFormat in = new SimpleDateFormat("");
+SimpleDateFormat out = new SimpleDateFormat("");
+out.format(in.parse(actual-date));
